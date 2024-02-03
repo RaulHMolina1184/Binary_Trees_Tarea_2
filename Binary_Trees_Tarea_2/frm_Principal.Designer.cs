@@ -29,25 +29,30 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            tmr_1 = new System.Windows.Forms.Timer(components);
             ptb_matriz = new PictureBox();
             bnt_random = new Button();
             btn_pausa = new Button();
             btn_iniciar = new Button();
-            tmr_1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)ptb_matriz).BeginInit();
             SuspendLayout();
+            // 
+            // tmr_1
+            // 
+            tmr_1.Tick += tmr_1_Tick;
             // 
             // ptb_matriz
             // 
             ptb_matriz.Location = new Point(31, 36);
+            ptb_matriz.Margin = new Padding(4);
             ptb_matriz.Name = "ptb_matriz";
-            ptb_matriz.Size = new Size(400, 400);
+            ptb_matriz.Size = new Size(533, 492);
             ptb_matriz.TabIndex = 1;
             ptb_matriz.TabStop = false;
             // 
             // bnt_random
             // 
-            bnt_random.Location = new Point(535, 35);
+            bnt_random.Location = new Point(593, 37);
             bnt_random.Name = "bnt_random";
             bnt_random.Size = new Size(155, 29);
             bnt_random.TabIndex = 1;
@@ -57,7 +62,7 @@
             // 
             // btn_pausa
             // 
-            btn_pausa.Location = new Point(535, 89);
+            btn_pausa.Location = new Point(593, 91);
             btn_pausa.Name = "btn_pausa";
             btn_pausa.Size = new Size(155, 29);
             btn_pausa.TabIndex = 2;
@@ -67,7 +72,7 @@
             // 
             // btn_iniciar
             // 
-            btn_iniciar.Location = new Point(535, 143);
+            btn_iniciar.Location = new Point(593, 145);
             btn_iniciar.Name = "btn_iniciar";
             btn_iniciar.Size = new Size(155, 29);
             btn_iniciar.TabIndex = 3;
@@ -75,15 +80,11 @@
             btn_iniciar.UseVisualStyleBackColor = true;
             btn_iniciar.Click += btn_iniciar_Click;
             // 
-            // tmr_1
-            // 
-            tmr_1.Tick += tmr_1_Tick;
-            // 
             // frm_Principal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 487);
+            ClientSize = new Size(800, 557);
             Controls.Add(btn_iniciar);
             Controls.Add(btn_pausa);
             Controls.Add(bnt_random);

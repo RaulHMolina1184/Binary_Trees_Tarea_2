@@ -11,11 +11,11 @@ namespace Capa_Logica
 {
     public class Reglas_del_Juego
     {
-        // Globales privadas
+        // Globales esticas para uso en otras clases
         public static int longitud = 40;
         public static int longitudPixel = 10;
 
-        // Matriz de juego
+        // Matriz de juego inicial de juego
         public static int[,] celulas = new int[,] {
                                           { 0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                                           { 0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -47,7 +47,7 @@ namespace Capa_Logica
                                           { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                                           { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                                           { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                                          { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                          { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                                           { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                                           { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                                           { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -61,6 +61,7 @@ namespace Capa_Logica
 
         public void JuegoDeLaVida()
         {
+            // Matriz temporal
             int[,] celulasTemp = new int[longitud, longitud];
             for (int x = 0; x < longitud; x++)
             {
@@ -73,7 +74,8 @@ namespace Capa_Logica
                 }
             }
 
-            celulas = celulasTemp;
+            //celulas = celulasTemp; // Problema
+            Array.Copy(celulasTemp, celulas, celulasTemp.Length);
 
         }
 

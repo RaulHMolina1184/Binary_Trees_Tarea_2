@@ -1,5 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-// Importar el proyecto con las 
+// Importar el proyecto con las clases
 using Capa_Logica;
 
 
@@ -22,11 +30,6 @@ namespace Binary_Trees_Tarea_2
 
         #region Metodos
 
-        private void frm_Principal_load()
-        {
-
-        }
-
         private void PintarMatriz()
         {
             Bitmap bmp = new Bitmap(ptb_matriz.Width, ptb_matriz.Height);
@@ -35,9 +38,9 @@ namespace Binary_Trees_Tarea_2
                 for (int y = 0; y < longitud; y++)
                 {
                     if (celulas[x, y] == 0)
-                        PintarPixel(bmp, x, y, Color.White);
+                        PintarPixel(bmp, x, y, Color.Red);
                     else
-                        PintarPixel(bmp, x, y, Color.Black);
+                        PintarPixel(bmp, x, y, Color.White);
                 }
             }
 
